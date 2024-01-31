@@ -138,7 +138,7 @@ mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
-## To verify, if kubectl is working or not, run the following command.
+## To verify, if kubectl is working or not, run the following command. RUN THIS COMMAND AS AN UBUNTU USER
 kubectl get pods -A
 ```sh
 #deploy the network plugin - weave network and verify
