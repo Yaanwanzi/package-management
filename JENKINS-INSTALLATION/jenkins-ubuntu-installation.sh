@@ -1,13 +1,11 @@
-
 # Jenkins Installation And Setup In AWS EC2 ubuntu Instance.
 # Installation of Java
 sudo apt update   # Update the repositories
-sudo apt install openjdk-11-jdk
+sudo apt install openjdk-21-jdk
 java -version
 # Install Jenkins
-sudo wget -O /etc/yum.repos.d/jenkins.repo \
-    https://pkg.jenkins.io/redhat-stable/jenkins.repo
-sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+sudo wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 sudo dnf upgrade
 # Add required dependencies for the jenkins package
 sudo dnf install chkconfig java-devel
